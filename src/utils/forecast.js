@@ -13,7 +13,7 @@ const forecast = (long, lat, cb) => {
         temperature,
         precipProbability: precip
       } = response.body.currently;
-      const { summary } = response.body.hourly;
+      const { summary } = response.body.daily.data[0];
       const forecast = `${summary}It is ${temperature} degrees out and there is a ${precip}% chance of rain`;
       cb(undefined, {
         forecast
