@@ -9,7 +9,7 @@ form.addEventListener("submit", e => {
 document.querySelector(".button").addEventListener("click", getData);
 
 function getData() {
-  fetch(`weather?address=${input.value}`).then(response =>
+  fetch(`/weather?address=${input.value}`).then(response =>
     response.json().then(data => {
       document.querySelector(".message-1").textContent = data.forecast;
       document.querySelector(".message-2").textContent = data.location;
